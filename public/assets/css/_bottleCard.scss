@@ -1,0 +1,38 @@
+.bottleCard {
+  border: 1px solid black;
+  height: 30%;
+  border-radius: 20px;
+  background: $light;
+  opacity: 0.9;
+  box-shadow: 2px 2px 3px;
+  transform: scale(0.9);
+
+  h2 {
+    font-size: 0.8rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  img {
+    width: 30% !important;
+  }
+  &:hover {
+    transform: scale(1);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 550px) {
+  .bottleCard {
+    height: 25%;
+    h2 {
+      font-size: 0.6rem;
+    }
+    h5 {
+      font-size: 0.8rem;
+    }
+    img {
+      width: 40% !important;
+    }
+  }
+}

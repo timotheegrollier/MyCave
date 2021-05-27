@@ -1,0 +1,64 @@
+@import "settings";
+
+h1 {
+  color: #707070 !important;
+  -webkit-text-stroke-width: 1px !important;
+  -webkit-text-stroke-color: #d9d9d9 !important;
+  font-size: 1.5rem;
+}
+
+.homeCave {
+  background: #b5abab !important;
+  height: 100%;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.bestBottle {
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  box-shadow: 1px 2px 3px;
+}
+
+.carousel-dot {
+  color: $back;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  color: darkslateblue;
+  .next {
+    font-size: 2rem;
+  }
+  .prev {
+    font-size: 2rem;
+  }
+  .next:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .prev:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 350px) {
+  h2 {
+    font-size: 0.8rem !important;
+  }
+  .homeCave {
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+
+    .logo-mobile {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+}

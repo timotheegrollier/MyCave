@@ -1,0 +1,21 @@
+$light: #d9d9d9;
+$back: #aa5d5d;
+$nav: #363636;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+body {
+  background: $back !important;
+  height: 100vh !important;
+}
+
+#noFooter {
+  display: none !important;
+}
