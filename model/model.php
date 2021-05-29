@@ -21,3 +21,15 @@ function userConnect($pseudo)
     $req->execute(array($pseudo));
     return $req->fetch(PDO::FETCH_ASSOC);
 }
+
+function getBottle($idBottle)
+{
+    try {
+        $bdd = connect();
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    $req = $bdd->prepare('SELECT * FROM bottles WHERE id = ?');
+    $req->execute(array($idBottle));
+    return $req->fetch(PDO::FETCH_ASSOC);
+}

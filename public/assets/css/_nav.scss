@@ -16,6 +16,14 @@
         cursor: pointer;
       }
     }
+    .disconnect {
+      color: rgb(3, 187, 58);
+      font-size: 2rem;
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
+    }
   }
 }
 

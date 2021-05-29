@@ -35,9 +35,11 @@ function connectUser()
                     $isPasswordCorrect = password_verify($logs['password'], $userLog['password']);
                     var_dump($isPasswordCorrect);
                     if ($isPasswordCorrect) {
-
-
                         // AJOUTE LES SESSIONS
+
+                        session_start();
+                        $_SESSION['pseudo'] = $logs['pseudo'];
+
 
                         header('Location: ?action=home');
                         exit();
@@ -58,4 +60,27 @@ function connectUser()
         $logsError['noId'] = "Veuillez entrez des identifiants valide";
         require "./view/home/noConnect.php";
     }
+}
+
+
+// DECONNEXION 
+
+function disconnect()
+{
+    session_start();
+
+    $_SESSION = array();
+    session_destroy();
+
+    header("Location: ?action=home");
+    exit();
+}
+
+
+// AFFICHAGE D'UNE BOUTEILLE
+
+function showBottle()
+{
+    $bottle = getBottle($_GET['id']);
+    require "./view/bottle/bottle.php";
 }

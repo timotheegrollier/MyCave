@@ -11,6 +11,10 @@ if (isset($_GET['action'])) {
         cave();
     } elseif ($_GET['action'] == "connect") {
         connectUser();
+    } elseif ($_GET['action'] == "disconnect") {
+        disconnect();
+    } elseif ($_GET['action'] == "bottle") {
+        showBottle();
     } else {
         index();
     }
