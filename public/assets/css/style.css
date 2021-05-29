@@ -128,6 +128,13 @@ h1 {
   cursor: pointer;
 }
 
+.error {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 350px) {
   h2 {
     font-size: 0.8rem !important;
