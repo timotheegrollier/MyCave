@@ -42,7 +42,7 @@
 
                         <div class="card-body card-infos">
                             <?php if (isset($_SESSION['pseudo'])) {
-                                if ($_SESSION['pseudo'] == "alcoolX") { ?>
+                                if ($_SESSION['pseudo'] == "LeCaviste") { ?>
                             <i class="fas fa-cog h-2 editIcon" data-toggle="modal" data-target="#editBottleModal"
                                 role="button" aria-expanded="false" aria-controls="settingsBottle"></i>
                             <?php
@@ -93,34 +93,41 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <form action="?action=edit_bottle" method="POST">
+                <form action="?action=edit_bottle&id=<?= $_GET['id'] ?>" method="POST">
                     <div class=" form-group">
                         <label for="bottleName">Nom:</label>
-                        <input type="text" class="form-control" id="botleName" placeholder="<?= $bottle['name'] ?>">
+                        <input type="text" name="name" class="form-control" id="botleName"
+                            placeholder="<?= $bottle['name'] ?>">
 
                         <div class="form-group">
                             <label for="countryBottle">Pays: </label>
-                            <input type="text" class="form-control" id="countryBottle"
+                            <input type="text" name="country" class="form-control" id="countryBottle"
                                 placeholder="<?= $bottle['country'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="regionBottle">Région:</label>
-                            <input type="text" class="form-control" id="regionBottle"
+                            <input type="text" name="region" class="form-control" id="regionBottle"
                                 placeholder="<?= $bottle['region'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="yearBottle">Millésime:</label>
-                            <input type="text" class="form-control" id="yearBottle"
+                            <input type="text" name="year" class="form-control" id="yearBottle"
                                 placeholder="<?= $bottle['year'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="grappesBottle">Raisin:</label>
-                            <input type="text" class="form-control" id="grappesBottle"
+                            <input type="text" name="grapes" class="form-control" id="grappesBottle"
                                 placeholder="<?= $bottle['grapes'] ?>">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Example file input</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <label for="descriptionEdit">Description:</label>
+                            <textarea class="form-control" name="description" id="descriptionEdit" rows="3"
+                                placeholder="<?= $bottle['description'] ?>"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1"><img class="w-25"
+                                    src="./public/img/noBg/<?= $bottle['picture'] ?>" alt=""></label>
+                            <input name="picture" type="file" class="form-control-file" id="exampleFormControlFile1">
                         </div>
                         <div class="row justify-content-center">
 

@@ -13,6 +13,12 @@ body {
   height: 100vh !important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .navbar {
   background: #363636 !important;
 }
@@ -60,6 +66,12 @@ ul {
 body {
   background: #aa5d5d !important;
   height: 100vh !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .homeCave {
@@ -139,6 +151,12 @@ ul {
 body {
   background: #aa5d5d !important;
   height: 100vh !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #footerCop {
@@ -233,6 +251,10 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+#descriptionEdit {
+  resize: none !important;
 }
 
 @media (max-width: 550px) {

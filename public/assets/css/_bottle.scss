@@ -28,6 +28,10 @@
   }
 }
 
+#descriptionEdit {
+  resize: none !important;
+}
+
 @media (max-width: 550px) {
   // On cache le footer au click si les infos ne rentre pas
   .hideFooter {
