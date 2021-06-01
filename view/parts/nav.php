@@ -40,7 +40,7 @@
 
             <!-- AFFICHAGE DE LA BOUTEILLE CONSULTER EN NAV  -->
 
-            <?php if ($_GET['action'] == "bottle") { ?>
+            <?php if (isset($_GET['action']) && $_GET['action'] == "bottle") { ?>
             <li class="nav-item active">
                 <a class="nav-link" href="?action=bottle&id=<?= $bottle['id'] ?>"><?= $bottle['name'] ?></a>
             </li><?php
@@ -57,7 +57,7 @@
             <?php
             } else { ?>
             <!-- SINON ON AFFICHE L'ICONE BLANCHE ET ON OUVRE LA MODAL DE CONNEXION -->
-            <li><i data-toggle="modal" data-target="#exampleModal" class="fas fa-power-off login btn"></i></li> <?php
+            <li><i data-toggle="modal" data-target="#loginModal" class="fas fa-power-off login btn"></i></li> <?php
                                                                                                                 } ?>
         </ul>
 
@@ -69,12 +69,11 @@
 
 
 <!-- Modal de connexion-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="exampleModalLabel">Connexion</h5>
+                <h5 class="modal-title text-center" id="loginModal">Connexion</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

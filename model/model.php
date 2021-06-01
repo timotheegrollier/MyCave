@@ -22,6 +22,8 @@ function userConnect($pseudo)
     return $req->fetch(PDO::FETCH_ASSOC);
 }
 
+
+
 function getBottle($idBottle)
 {
     try {

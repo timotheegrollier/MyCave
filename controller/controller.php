@@ -39,8 +39,6 @@ function connectUser()
 
                         session_start();
                         $_SESSION['pseudo'] = $logs['pseudo'];
-
-
                         header('Location: ?action=home');
                         exit();
                     } else {

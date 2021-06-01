@@ -70,25 +70,6 @@ body {
   display: none !important;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-body {
-  background: #aa5d5d !important;
-  height: 100vh !important;
-}
-
-#noFooter {
-  display: none !important;
-}
-
 h1 {
   color: #707070 !important;
   -webkit-text-stroke-width: 1px !important;
@@ -148,9 +129,6 @@ h1 {
     flex-direction: column;
     justify-content: start;
     height: 100%;
-  }
-  .homeCave .logo-mobile {
-    margin-top: 65px;
   }
 }
 * {
@@ -223,8 +201,34 @@ body {
   height: 80vh;
 }
 
-.bottleText {
-  margin-bottom: 110px !important;
+.card-dark {
+  background: #d9d9d9 !important;
+}
+
+.card-header {
+  background: #d9d9d9 !important;
+  padding: 0 !important;
+}
+
+.bottleImg {
+  width: 70% !important;
+}
+
+.card-infos {
+  background: #d9d9d9;
+  padding: 0 !important;
+}
+.card-infos .infos li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 350px) {
+  .bottleImg {
+    width: 40% !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
