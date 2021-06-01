@@ -119,6 +119,10 @@
                             <input type="text" class="form-control" id="grappesBottle"
                                 placeholder="<?= $bottle['grapes'] ?>">
                         </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Example file input</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
                         <div class="row justify-content-center">
 
                             <input type="submit" class="btn btn-success col-4" value="Editer">

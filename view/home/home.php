@@ -8,9 +8,11 @@
 <div class="container homeCave d-flex align-items-center justify-content-center col-12 col-sm-8">
     <div class="container-fluid h-75 justify-content-center align-items-center">
 
+        <div class="container col-12">
 
-        <a href="#" class="logo-mobile d-sm-none d-block col-12 text-center"><img
-                src="../mvCave/public/img/logo-large.png" alt="" class="img-fluid"></a>
+            <a href="#" class="logo-mobile d-sm-none d-flex justify-content-center col-12"><img
+                    src="../mvCave/public/img/logo-large.png" alt="" class="img-fluid"></a>
+        </div>
 
         <div class="bestBottle">
             <h2 class="text-center">Nos meilleures bouteilles:</h2>
