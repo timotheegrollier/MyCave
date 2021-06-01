@@ -1,3 +1,4 @@
+<!-- Obliger de mettre session_start partout -->
 <!DOCTYPE html>
 <html lang="fr">
 

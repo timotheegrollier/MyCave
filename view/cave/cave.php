@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php $title = 'cave'; ?>
 
 <?php ob_start(); ?>

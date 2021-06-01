@@ -1,9 +1,16 @@
 $(document).ready(function () {
+  // Faire disparaitre le footer au scroll
+
   $(window).scroll(() => {
     $("#footerCop").attr("id", "noFooter");
     if ($(window).scrollTop() == 0) {
       $("#noFooter").attr("id", "footerCop");
     }
+  });
+
+  // Au click sur les infos on fait aussi disparaitre le footer
+  $("#fuckBtn").click(() => {
+    $("#footerCop").toggleClass("hideFooter");
   });
 
   // CARROUSEL

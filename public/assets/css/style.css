@@ -13,10 +13,6 @@ body {
   height: 100vh !important;
 }
 
-#noFooter {
-  display: none !important;
-}
-
 .navbar {
   background: #363636 !important;
 }
@@ -30,6 +26,14 @@ body {
 }
 .navbar ul .login:hover {
   color: #aa5d5d;
+  cursor: pointer;
+}
+.navbar ul .disconnect {
+  color: #03bb3a;
+  font-size: 2rem;
+}
+.navbar ul .disconnect:hover {
+  color: red;
   cursor: pointer;
 }
 
@@ -58,54 +62,21 @@ body {
   height: 100vh !important;
 }
 
-#noFooter {
-  display: none !important;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-body {
-  background: #aa5d5d !important;
-  height: 100vh !important;
-}
-
-#noFooter {
-  display: none !important;
-}
-
-h1 {
-  color: #707070 !important;
-  -webkit-text-stroke-width: 1px !important;
-  -webkit-text-stroke-color: #d9d9d9 !important;
-  font-size: 1.5rem;
-}
-
 .homeCave {
   background: #b5abab !important;
   height: 100%;
 }
 
-.logo-mobile {
-  display: none;
-}
-
 .bestBottle {
   width: 100%;
   border: 1px solid black;
-  padding: 5px;
   box-shadow: 1px 2px 3px;
+  margin-bottom: 30px;
 }
 
 .carousel-dot {
   color: #aa5d5d;
+  display: flex;
 }
 
 .controls {
@@ -128,19 +99,31 @@ h1 {
   cursor: pointer;
 }
 
-@media (max-width: 350px) {
+.error {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
   h2 {
     font-size: 0.8rem !important;
   }
 
   .homeCave {
     flex-direction: column;
-    justify-content: center;
-    height: 90%;
+    justify-content: start;
+    height: 100%;
   }
-  .homeCave .logo-mobile {
-    display: block;
-    margin-bottom: 20px;
+}
+@media (max-width: 350px) {
+  .carousel-dot {
+    display: none !important;
+  }
+
+  .controls {
+    display: none;
   }
 }
 * {
@@ -158,18 +141,29 @@ body {
   height: 100vh !important;
 }
 
-#noFooter {
-  display: none !important;
-}
-
 #footerCop {
   background: #363636 !important;
+  transition: 0.8s ease-in-out;
 }
 
 @media (max-width: 350px) {
   #footerCop {
     flex-direction: column !important;
     align-items: center !important;
+  }
+}
+#noFooter {
+  transition: 0.8s ease-in-out;
+  transform: translateY(100px);
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+@media (min-width: 350px) {
+  #noFooter {
+    display: flex !important;
+    justify-content: end !important;
+    flex-direction: row !important;
   }
 }
 .bottleCard {
@@ -188,7 +182,7 @@ body {
   font-size: 1rem;
 }
 .bottleCard img {
-  width: 30% !important;
+  width: 45% !important;
 }
 .bottleCard:hover {
   transform: scale(1);
@@ -206,11 +200,50 @@ body {
     font-size: 0.8rem;
   }
   .bottleCard img {
-    width: 40% !important;
+    width: 70% !important;
   }
 }
 .cave {
   height: 80vh;
+}
+
+.card-dark {
+  background: #d9d9d9 !important;
+}
+
+.card-header {
+  background: #d9d9d9 !important;
+  padding: 0 !important;
+}
+
+.bottleImg {
+  width: 70% !important;
+}
+
+.card-infos {
+  background: #d9d9d9;
+  padding: 0 !important;
+}
+.card-infos .editIcon {
+  color: gray !important;
+  font-size: 1.5rem !important;
+}
+.card-infos .infos li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .hideFooter {
+    transform: translateY(100px);
+  }
+}
+@media (max-width: 350px) {
+  .bottleImg {
+    width: 40% !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
