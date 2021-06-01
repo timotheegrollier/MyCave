@@ -14,6 +14,10 @@
 .card-infos {
   background: $light;
   padding: 0 !important;
+  .editIcon {
+    color: gray !important;
+    font-size: 1.5rem !important;
+  }
   .infos {
     li {
       display: flex;
@@ -21,6 +25,13 @@
       align-items: center;
       text-align: center;
     }
+  }
+}
+
+@media (max-width: 550px) {
+  // On cache le footer au click si les infos ne rentre pas
+  .hideFooter {
+    transform: translateY(100px);
   }
 }
 

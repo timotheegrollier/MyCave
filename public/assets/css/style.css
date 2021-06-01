@@ -13,10 +13,6 @@ body {
   height: 100vh !important;
 }
 
-#noFooter {
-  display: none !important;
-}
-
 .navbar {
   background: #363636 !important;
 }
@@ -66,17 +62,6 @@ body {
   height: 100vh !important;
 }
 
-#noFooter {
-  display: none !important;
-}
-
-h1 {
-  color: #707070 !important;
-  -webkit-text-stroke-width: 1px !important;
-  -webkit-text-stroke-color: #d9d9d9 !important;
-  font-size: 1.5rem;
-}
-
 .homeCave {
   background: #b5abab !important;
   height: 100%;
@@ -85,12 +70,13 @@ h1 {
 .bestBottle {
   width: 100%;
   border: 1px solid black;
-  padding: 5px;
   box-shadow: 1px 2px 3px;
+  margin-bottom: 30px;
 }
 
 .carousel-dot {
   color: #aa5d5d;
+  display: flex;
 }
 
 .controls {
@@ -131,6 +117,15 @@ h1 {
     height: 100%;
   }
 }
+@media (max-width: 350px) {
+  .carousel-dot {
+    display: none !important;
+  }
+
+  .controls {
+    display: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -146,18 +141,29 @@ body {
   height: 100vh !important;
 }
 
-#noFooter {
-  display: none !important;
-}
-
 #footerCop {
   background: #363636 !important;
+  transition: 0.8s ease-in-out;
 }
 
 @media (max-width: 350px) {
   #footerCop {
     flex-direction: column !important;
     align-items: center !important;
+  }
+}
+#noFooter {
+  transition: 0.8s ease-in-out;
+  transform: translateY(100px);
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+@media (min-width: 350px) {
+  #noFooter {
+    display: flex !important;
+    justify-content: end !important;
+    flex-direction: row !important;
   }
 }
 .bottleCard {
@@ -218,6 +224,10 @@ body {
   background: #d9d9d9;
   padding: 0 !important;
 }
+.card-infos .editIcon {
+  color: gray !important;
+  font-size: 1.5rem !important;
+}
 .card-infos .infos li {
   display: flex;
   flex-direction: column;
@@ -225,6 +235,11 @@ body {
   text-align: center;
 }
 
+@media (max-width: 550px) {
+  .hideFooter {
+    transform: translateY(100px);
+  }
+}
 @media (max-width: 350px) {
   .bottleImg {
     width: 40% !important;

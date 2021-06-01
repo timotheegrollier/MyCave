@@ -5,7 +5,10 @@
 <?php ob_start(); ?>
 
 <section id="bottle" class="d-flex w-100 justify-content-center align-items-center h-100">
+
     <div class="homeCave d-flex align-items-center col-12 col-sm-8 flex-column justify-content-center">
+
+
 
         <div class="h-75 d-flex flex-column align-items-center justify-content-center">
 
@@ -26,10 +29,10 @@
             <div class="accordion container-fluid mb-5 w-100" id="accordionExample">
                 <div class="card w-100 card-dark">
                     <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
+                        <h2 class="mb-0" id="fuckBtn">
                             <button class="btn btn-link btn-block text-center card-btn" type="button"
                                 data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
+                                aria-controls="collapseOne" id="infoBtn">
                                 Informations
                             </button>
                         </h2>
@@ -40,8 +43,8 @@
                         <div class="card-body card-infos">
                             <?php if (isset($_SESSION['pseudo'])) {
                                 if ($_SESSION['pseudo'] == "alcoolX") { ?>
-                            <i class="fas fa-cog h-2" data-toggle="modal" data-target="#editBottleModal" role="button"
-                                aria-expanded="false" aria-controls="settingsBottle"></i>
+                            <i class="fas fa-cog h-2 editIcon" data-toggle="modal" data-target="#editBottleModal"
+                                role="button" aria-expanded="false" aria-controls="settingsBottle"></i>
                             <?php
                                 }
                             }
@@ -52,8 +55,7 @@
                                     <span class="badge badge-dark">Région:</span> <?= $bottle['region'] ?>
                                 </li>
                                 <li> <span class="badge badge-dark">Millésime:</span> <?= $bottle['year'] ?></li>
-                                <li> <span class="badge badge-dark">Grapes:</span> <?= $bottle['grapes'] ?></li>
-
+                                <li> <span class="badge badge-dark">Raisins:</span> <?= $bottle['grapes'] ?></li>
                             </ul>
                         </div>
 
@@ -87,13 +89,10 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editBottleModal">Edit bottle</h5>
+            <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
                 <form action="?action=edit_bottle" method="POST">
                     <div class=" form-group">
                         <label for="bottleName">Nom:</label>

@@ -6,7 +6,7 @@
 
 
 <div class="container homeCave d-flex align-items-center justify-content-center col-12 col-sm-8">
-    <div class="container-fluid h-75 justify-content-center align-items-center">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
 
         <div class="container col-12">
 

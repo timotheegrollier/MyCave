@@ -2,11 +2,30 @@
 
 #footerCop {
   background: $nav !important;
+  transition: 0.8s ease-in-out;
 }
 
 @media (max-width: 350px) {
   #footerCop {
     flex-direction: column !important;
     align-items: center !important;
+  }
+}
+
+// ID QUI SE MET AU SCROLL
+
+#noFooter {
+  transition: 0.8s ease-in-out;
+  transform: translateY(100px);
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+// Faire disparaitre le footer en ligne
+@media (min-width: 350px) {
+  #noFooter {
+    display: flex !important;
+    justify-content: end !important;
+    flex-direction: row !important;
   }
 }
