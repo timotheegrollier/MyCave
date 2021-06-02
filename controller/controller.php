@@ -128,7 +128,7 @@ function editBottle()
         if (empty($_POST['name'])) {
             $editDATA['name'] = $bottle['name'];
         } else {
-            if (!is_string($_POST['name']) || strlen($_POST['name']) < 4 || strlen($_POST['name']) >= 25) {
+            if (strlen($_POST['name']) < 4 || strlen($_POST['name']) >= 25) {
                 $editErrors['name'] = "Nom invalide !";
                 require_once "./view/parts/noConnect.php";
             } else {
@@ -141,7 +141,7 @@ function editBottle()
         if (empty($_POST['country'])) {
             $editDATA['country'] = $bottle['country'];
         } else {
-            if (!is_string($_POST['country']) || strlen($_POST['country']) < 3 || strlen($_POST['country']) >= 20) {
+            if (strlen($_POST['country']) < 3 || strlen($_POST['country']) >= 20) {
                 $editErrors['country'] = "Pays invalide !";
                 require_once "./view/parts/noConnect.php";
             } else {
@@ -154,7 +154,7 @@ function editBottle()
         if (empty($_POST['region'])) {
             $editDATA['region'] = $bottle['region'];
         } else {
-            if (!is_string($_POST['region']) || strlen($_POST['region']) < 4 || strlen($_POST['region']) >= 20) {
+            if (strlen($_POST['region']) < 4 || strlen($_POST['region']) >= 20) {
                 $editErrors['region'] = "Région invalide !";
                 require_once "./view/parts/noConnect.php";
             } else {
@@ -184,7 +184,7 @@ function editBottle()
         if (empty($_POST['grapes'])) {
             $editDATA['grapes'] = $bottle['grapes'];
         } else {
-            if (!is_string($_POST['grapes']) || strlen($_POST['grapes']) < 4 || strlen($_POST['grapes']) >= 20) {
+            if (strlen($_POST['grapes']) < 4 || strlen($_POST['grapes']) >= 20) {
                 $editErrors['grapes'] = "Raisin invalide!";
                 require_once "./view/parts/noConnect.php";
             } else {
@@ -197,7 +197,7 @@ function editBottle()
         if (empty($_POST['description'])) {
             $editDATA['description'] = $bottle['description'];
         } else {
-            if (!is_string($_POST['description']) || strlen($_POST['description']) < 10) {
+            if (strlen($_POST['description']) < 10 || strlen($_POST['description']) >= 250) {
                 $editErrors['description'] = "Description trop courte ou invalide";
                 require_once "./view/parts/noConnect.php";
             } else {
@@ -205,6 +205,8 @@ function editBottle()
             }
         }
     }
+
+    // SI PAS DERREURS ON EXECUTE LA REQUETE
     if (empty($editErrors)) {
         $req = changeBottle($_GET['id']);
         $req->execute(array('newName' => $editDATA['name'], 'newRegion' => $editDATA['region'], 'newCountry' => $editDATA['country'], 'newYear' => $editDATA['year'], 'newGrapes' => $editDATA['grapes'], 'newDescription' => $editDATA['description']));
@@ -212,5 +214,138 @@ function editBottle()
         exit;
     } else {
         require_once './view/parts/noConnect.php';
+    }
+}
+
+
+// AJOUT DE BOUTEILLE --CREATE
+function addBottle()
+{
+    $addDATA = [];
+    $addErrors = [];
+
+    if (!empty($_POST)) {
+
+        // ADD NAME
+
+
+        if (empty($_POST['name'])) {
+            $addErrors['noName'] = "Vous devez ajouter un nom !";
+            require("./view/parts/noConnect.php");
+        } else {
+            if (strlen($_POST['name']) < 3 || strlen($_POST['name']) > 30) {
+                $addErrors['noName'] = "Le nom n'est pas valide !";
+                require("./view/parts/noConnect.php");
+            } else {
+                $addDATA['name'] = strtoupper(htmlspecialchars(strip_tags($_POST["name"])));
+            }
+        }
+
+        // ADD COUNTRY
+
+        if (empty($_POST["country"])) {
+            $addErrors['noCountry'] = "Vous devez ajouter un pays !";
+            require("./view/parts/noConnect.php");
+        } else {
+            if (strlen($_POST['country']) < 3 || strlen($_POST["country"]) >= 20) {
+                $addErrors['country'] = "Le pays est invalide !";
+                require("./view/parts/noConnect.php");
+            } else {
+                $addDATA['country'] = trim(stripslashes(htmlspecialchars(strip_tags($_POST["country"]))));
+                var_dump($addDATA['country']);
+            }
+        }
+
+
+
+        // ADD REGION
+
+
+        if (empty($_POST["region"])) {
+            $addErrors['noRegion'] = "Vous devez ajouter une Région !";
+            require("./view/parts/noConnect.php");
+        } else {
+            if (strlen($_POST['region']) < 3 || strlen($_POST["region"]) > 30) {
+                $addErrors['region'] = "La région n'est pas valide !";
+                require("./view/parts/noConnect.php");
+            } else {
+                $addDATA['region'] = trim(stripslashes(htmlspecialchars(strip_tags($_POST["region"]))));
+            }
+        }
+
+        // ADD YEAR
+
+
+        if (empty($_POST["year"])) {
+            $addErrors['noYear'] = "Vous devez ajouter un millésime !";
+            require("./view/parts/noConnect.php");
+        } else {
+            if (is_int($_POST['year'] == false) || $_POST['year'] < 1700 || $_POST['year'] >= 2022) {
+                $addErrors['year'] = "Le millésime est invalide !";
+                require("./view/parts/noConnect.php");
+            } else {
+                $addDATA['year'] = trim(stripslashes(htmlspecialchars(strip_tags($_POST["year"]))));
+                var_dump($addDATA['year']);
+            }
+        }
+
+
+        // ADD GRAPES 
+        if (empty($_POST['grapes'])) {
+            $addErrors['noGrapes'] = "Vous devez ajouter une variété !";
+            require("./view/parts/noConnect.php");
+        } else {
+            if (strlen($_POST['grapes']) < 4 || strlen($_POST['grapes']) >= 20) {
+                $addErrors['grapes'] = "Raisin invalide!";
+                require_once "./view/parts/noConnect.php";
+            } else {
+                $addDATA['grapes'] = trim(stripslashes(strip_tags(htmlspecialchars($_POST['grapes']))));
+                var_dump($addDATA['grapes']);
+            }
+        }
+
+
+
+
+
+        // ADD DESCRIPTION
+        if (empty($_POST['description'])) {
+            $addDATA['description'] = "";
+        } else {
+            if (strlen($_POST['description']) < 10 || strlen($_POST['description']) >= 250) {
+                $addErrors['description'] = "Description invalide !";
+                require_once "./view/parts/noConnect.php";
+            } else {
+                $addDATA['description'] = trim(stripslashes(strip_tags(htmlspecialchars($_POST['description']))));
+                var_dump($addDATA['description']);
+            }
+        }
+
+        // ADD IMAGE
+        if (empty($_FILES)) {
+            $addDATA['picture'] = "generic.png";
+        }
+
+
+
+        // SI PAS DERREURS ON EXECUTE LA REQUETE
+        if (empty($addErrors)) {
+            $addReq = setBottle();
+            $addReq->execute(array(
+                "name" => $addDATA['name'],
+                "country" => $addDATA['country'],
+                "region" => $addDATA['region'],
+                "year" => $addDATA['year'],
+                "grapes" => $addDATA['grapes'],
+                "description" => $addDATA['description'],
+                "picture" => $addDATA['picture'],
+            ));
+        } else {
+            $addErrors['noSQL'] = "Erreur ";
+            require("./view/parts/noConnect.php");
+        }
+    } else {
+        $addErrors['error'] = "Erreur";
+        require("./view/parts/noConnect.php");
     }
 }

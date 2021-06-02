@@ -47,3 +47,18 @@ function changeBottle($idBottle)
     $req = $bdd->prepare('UPDATE bottles SET name = :newName, country = :newCountry, region = :newRegion,year = :newYear ,grapes=:newGrapes, description = :newDescription  WHERE id = ' . $idBottle);
     return $req;
 }
+
+
+
+
+
+function setBottle()
+{
+    try {
+        $bdd = connect();
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    $req = $bdd->prepare('INSERT INTO bottles(name,year,grapes,country,region,description,picture) VALUES(:name,:year,:grapes,:country,:region,:description,:picture)');
+    return $req;
+}

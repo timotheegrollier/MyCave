@@ -18,6 +18,8 @@ if (isset($_GET['action'])) {
         showBottle();
     } elseif ($_GET['action'] == "edit_bottle") {
         editBottle();
+    } elseif ($_GET['action'] == "add_bottle") {
+        addBottle();
     } else {
         notFound();
     }

@@ -55,24 +55,24 @@
 
                 <form action="?action=add_bottle" method="POST">
                     <div class=" form-group">
-                        <label for="bottleName">Nom:</label>
-                        <input type="text" name="name" class="form-control" id="botleName">
+                        <label for="bottleName"><span class="required">*</span>Nom:</label>
+                        <input type="text" name="name" class="form-control" id="botleName" required>
 
                         <div class="form-group">
-                            <label for="countryBottle">Pays: </label>
-                            <input type="text" name="country" class="form-control" id="countryBottle">
+                            <label for="countryBottle"><span class="required">*</span>Pays: </label>
+                            <input type="text" name="country" class="form-control" id="countryBottle" required>
                         </div>
                         <div class="form-group">
-                            <label for="regionBottle">Région:</label>
-                            <input type="text" name="region" class="form-control" id="regionBottle">
+                            <label for="regionBottle"><span class="required">*</span>Région:</label>
+                            <input type="text" name="region" class="form-control" id="regionBottle" required>
                         </div>
                         <div class="form-group">
-                            <label for="yearBottle">Millésime:</label>
-                            <input type="text" name="year" class="form-control" id="yearBottle">
+                            <label for="yearBottle"><span class="required">*</span>Millésime:</label>
+                            <input type="text" name="year" class="form-control" id="yearBottle" required>
                         </div>
                         <div class="form-group">
-                            <label for="grappesBottle">Raisin:</label>
-                            <input type="text" name="grapes" class="form-control" id="grappesBottle">
+                            <label for="grappesBottle"><span class="required">*</span>Raisin:</label>
+                            <input type="text" name="grapes" class="form-control" id="grappesBottle" required>
                         </div>
                         <div class="form-group">
                             <label for="descriptionEdit">Description:</label>
