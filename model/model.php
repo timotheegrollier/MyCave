@@ -44,7 +44,7 @@ function changeBottle($idBottle)
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    $req = $bdd->prepare('UPDATE bottles SET name = :newName, country = :newCountry, region = :newRegion,year = :newYear ,grapes=:newGrapes, description = :newDescription  WHERE id = ' . $idBottle);
+    $req = $bdd->prepare('UPDATE bottles SET name = :newName, country = :newCountry, region = :newRegion,year = :newYear ,grapes=:newGrapes, description = :newDescription,picture = :newPicture  WHERE id = ' . $idBottle);
     return $req;
 }
 
@@ -61,4 +61,17 @@ function setBottle()
     }
     $req = $bdd->prepare('INSERT INTO bottles(name,year,grapes,country,region,description,picture) VALUES(:name,:year,:grapes,:country,:region,:description,:picture)');
     return $req;
+}
+
+
+
+
+function deleteBottle($bottleId)
+{
+    try {
+        $bdd = connect();
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    return $req = $bdd->query("DELETE  FROM bottles WHERE id = $bottleId");
 }

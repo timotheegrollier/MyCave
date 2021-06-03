@@ -20,6 +20,8 @@ if (isset($_GET['action'])) {
         editBottle();
     } elseif ($_GET['action'] == "add_bottle") {
         addBottle();
+    } elseif ($_GET['action'] == "delete_bottle") {
+        deleteCross();
     } else {
         notFound();
     }

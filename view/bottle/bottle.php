@@ -93,7 +93,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <form action="?action=edit_bottle&id=<?= $_GET['id'] ?>" method="POST">
+                <form action="?action=edit_bottle&id=<?= $_GET['id'] ?>" method="POST" enctype="multipart/form-data">
                     <div class=" form-group">
                         <label for="bottleName">Nom:</label>
                         <input type="text" name="name" class="form-control" id="botleName"
@@ -130,7 +130,6 @@
                             <input name="picture" type="file" class="form-control-file" id="exampleFormControlFile1">
                         </div>
                         <div class="row justify-content-center">
-
                             <input type="submit" class="btn btn-success col-4" value="Editer">
                         </div>
                 </form>

@@ -53,7 +53,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
 
-                <form action="?action=add_bottle" method="POST">
+                <form action="?action=add_bottle" method="POST" enctype="multipart/form-data">
                     <div class=" form-group">
                         <label for="bottleName"><span class="required">*</span>Nom:</label>
                         <input type="text" name="name" class="form-control" id="botleName" required>
