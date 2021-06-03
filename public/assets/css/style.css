@@ -250,7 +250,8 @@ input::-webkit-inner-spin-button {
 }
 
 .bottleImg {
-  width: 70% !important;
+  width: 60% !important;
+  max-height: 300px;
 }
 
 .card-infos {
