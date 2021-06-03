@@ -101,10 +101,10 @@ function disconnect()
 function showBottle()
 {
     if (!empty($_GET['id'])) {
-        require "./view/bottle/bottle.php";
         $bottles = getBottles()->fetchAll(PDO::FETCH_ASSOC);
-
+        
         $bottle = getBottle($_GET['id']);
+        require "./view/bottle/bottle.php";
     } else {
         header("Location: ?action=notFound");
     }
