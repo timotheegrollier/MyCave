@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 
-<?php $title = "bottle"; ?>
+<?php $title = $bottle['name']; ?>
 
 <?php ob_start(); ?>
 

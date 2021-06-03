@@ -8,8 +8,8 @@ function index()
 
 function cave()
 {
-    require('./view/cave/cave.php');
     $bottles = getBottles()->fetchAll(PDO::FETCH_ASSOC);
+    require('./view/cave/cave.php');
 }
 
 
