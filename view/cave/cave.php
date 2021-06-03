@@ -8,7 +8,7 @@
     <div class="cave container-fluid row">
 
         <?php foreach ($bottles as $bottle) {
-            require "../mvCave/view/parts/bottleCard.php";
+            require "view/parts/bottleCard.php";
         } ?>
 
 
