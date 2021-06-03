@@ -11,7 +11,7 @@
         <div class="container col-12">
 
             <a href="#" class="logo-mobile d-sm-none d-flex justify-content-center col-12"><img
-                    src="../mvCave/public/img/logo-large.png" alt="" class="img-fluid"></a>
+                    src="public/img/logo-large.png" alt="" class="img-fluid"></a>
         </div>
 
         <div class="bestBottle">
