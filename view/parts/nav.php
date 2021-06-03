@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-    <a class="navbar-brand d-none d-sm-block" href="?action=home"><img src="../../mvCave/public/img/logo.png"
+    <a class="navbar-brand d-none d-sm-block" href="?action=home"><img src="mvCave/public/img/logo.png"
             class="img-fluid w-75"></a>
 
 
