@@ -227,7 +227,7 @@ function editBottle()
             $name = basename($_FILES["picture"]["name"]);
 
             if (in_array($extension, $bonneExtensions)) {
-                if ($_FILES['picture']['size'] <= 3000000) {
+                if ($_FILES['picture']['size'] <= 5000000) {
 
                     if (!is_dir($uploads_dir)) {
                         mkdir($uploads_dir);
@@ -237,7 +237,7 @@ function editBottle()
                         $editDATA['picture'] = $newFileName . "." . $extension;
                     }
                 } else {
-                    $addErrors['pictureSize'] = "Poid de l'image supérieur a la limite de 3Mo";
+                    $addErrors['pictureSize'] = "Poid de l'image supérieur a la limite de 5Mo";
                 }
             } else {
                 $addErrors['pictureExtension'] = "Mauvaise extension d'image";
