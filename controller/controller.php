@@ -243,7 +243,7 @@ function editBottle()
                 $addErrors['pictureExtension'] = "Mauvaise extension d'image";
             }
         } else {
-            $editDATA['picture'] = "generic.png";
+            $editDATA['picture'] = $bottle['picture'];
         }
     }
 
