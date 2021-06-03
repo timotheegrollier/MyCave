@@ -7,6 +7,14 @@
   box-shadow: 2px 2px 3px;
   transform: scale(0.9);
 
+  .cross {
+    color: red;
+    font-size: 1.5rem;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+  }
+
   h2 {
     font-size: 0.8rem;
   }
@@ -15,10 +23,6 @@
   }
   img {
     width: 45% !important;
-  }
-  &:hover {
-    transform: scale(1);
-    cursor: pointer;
   }
 }
 

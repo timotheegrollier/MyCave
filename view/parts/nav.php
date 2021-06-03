@@ -20,6 +20,7 @@
 
     <div class="collapse navbar-collapse navbar-light justify-content-end " id="navbarNav">
         <ul class="navbar-nav">
+
             <li class="nav-item <?php if (isset($_GET['action'])) {
                                     if ($_GET['action'] == 'home') {
                                         echo "active";
@@ -45,6 +46,7 @@
                 <a class="nav-link" href="?action=bottle&id=<?= $bottle['id'] ?>"><?= $bottle['name'] ?></a>
             </li><?php
                     } ?>
+
 
 
 
@@ -84,8 +86,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">@</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                            aria-describedby="basic-addon1" name="pseudo">
+                        <input type="email" class="form-control" placeholder="Email" aria-label="Email"
+                            aria-describedby="basic-addon1" name="email">
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend">

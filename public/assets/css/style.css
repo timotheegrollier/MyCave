@@ -13,6 +13,16 @@ body {
   height: 100vh !important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.required {
+  color: red !important;
+}
+
 .navbar {
   background: #363636 !important;
 }
@@ -60,6 +70,16 @@ ul {
 body {
   background: #aa5d5d !important;
   height: 100vh !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.required {
+  color: red !important;
 }
 
 .homeCave {
@@ -141,6 +161,16 @@ body {
   height: 100vh !important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.required {
+  color: red !important;
+}
+
 #footerCop {
   background: #363636 !important;
   transition: 0.8s ease-in-out;
@@ -175,6 +205,13 @@ body {
   box-shadow: 2px 2px 3px;
   transform: scale(0.9);
 }
+.bottleCard .cross {
+  color: red;
+  font-size: 1.5rem;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
 .bottleCard h2 {
   font-size: 0.8rem;
 }
@@ -183,10 +220,6 @@ body {
 }
 .bottleCard img {
   width: 45% !important;
-}
-.bottleCard:hover {
-  transform: scale(1);
-  cursor: pointer;
 }
 
 @media (max-width: 550px) {
@@ -233,6 +266,10 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+#descriptionEdit {
+  resize: none !important;
 }
 
 @media (max-width: 550px) {

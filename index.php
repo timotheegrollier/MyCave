@@ -3,6 +3,7 @@ Je fais un require de mon controller afin de pouvoir éxécuté les méthodes st
 <?php
 require('controller/controller.php');
 // je  vérifie si j'ai une clef action dans mon $_GET['action']
+
 if (isset($_GET['action'])) {
     // je  vérifie si ma clef action dans mon $_GET est == à list-users
     if ($_GET['action'] == "home") {
@@ -15,8 +16,14 @@ if (isset($_GET['action'])) {
         disconnect();
     } elseif ($_GET['action'] == "bottle") {
         showBottle();
+    } elseif ($_GET['action'] == "edit_bottle") {
+        editBottle();
+    } elseif ($_GET['action'] == "add_bottle") {
+        addBottle();
+    } elseif ($_GET['action'] == "delete_bottle") {
+        deleteCross();
     } else {
-        index();
+        notFound();
     }
 } else {
     index();
