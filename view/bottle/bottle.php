@@ -15,7 +15,7 @@
 
             <div class="row justify-content-center">
 
-                <img class="bottleImg" src="../mvCave/public/img/noBg/<?= $bottle['picture'] ?>" alt="">
+                <img class="bottleImg" src="public/img/noBg/<?= $bottle['picture'] ?>" alt="">
             </div>
 
             <div class="container-fluid bottleText">
